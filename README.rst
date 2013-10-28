@@ -63,8 +63,8 @@ Interface <https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+ARI>`__
         msg_json = json.loads(msg_str)
         if msg_json['type'] == 'StasisStart':
             channelId = msg_json['channel']['id']
-            ari.channels.answer(channelId=channelId)
-            ari.channels.play(channelId=channelId,
+            ari.channels.answerChannel(channelId=channelId)
+            ari.channels.playOnChannel(channelId=channelId,
                               media='sound:hello-world')
             ari.channels.continueInDialplan(channelId=channelId)
 
