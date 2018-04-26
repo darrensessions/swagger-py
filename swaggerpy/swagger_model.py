@@ -110,7 +110,7 @@ def json_load_url(http_client, url):
     :param url: URL for JSON to parse
     :return: Parsed JSON dict
     """
-    scheme = urlparse.urlparse(url).scheme
+    scheme = urllib.parse.urlparse(url).scheme
     if scheme == 'file':
         # requests can't handle file: URLs
         fp = urllib.urlopen(url)
